@@ -1,6 +1,6 @@
-<h1 align="center">Welcome to ts-template 👋</h1>
+<h1 align="center">Welcome to degit-scafold 👋</h1>
 <p>
-  <a href="https://www.npmjs.com/package/ts-template" target="_blank">
+  <a href="https://www.npmjs.com/package/degit-scafold" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/ts-template.svg">
   </a>
   <a href="#" target="_blank">
@@ -8,7 +8,13 @@
   </a>
 </p>
 
-> A boilerplate to typescript projects
+> This project is a merge of degit and Mustache
+
+## See
+
+* [degit](https://www.npmjs.com/package/degit)
+* [mustache](https://www.npmjs.com/package/mustache)
+* [inquirer](https://www.npmjs.com/package/inquirer)
 
 ## Setup
 

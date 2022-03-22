@@ -34,7 +34,8 @@ dist/index.js: index.ts node_modules/.last_lint node_modules/.bin/tsc
 	./node_modules/.bin/tsc -p tsconfig.json
 
 dist/bin: dist/index.js
-	echo "$(echo -n '#!/usr/bin/env node'; cat dist/index.js)" > dist/bin
+	echo "#!/usr/bin/env node" > dist/bin
+	cat dist/index.js >> dist/bin
 	chmod +x $@
 
 build: ## build: transpile typescript to javascript
