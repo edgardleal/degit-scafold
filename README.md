@@ -25,8 +25,16 @@ yarn install
 ## Usage
 
 ```sh
-npx degit edgardleal/typescript-boilerplate name-of-project
+npx degit-scafold githut-username/project target-folder
 ```
+
+### Examples
+
+```sh
+npx degit-scafold edgardleal/typescript-boilerplate name-of-project
+```
+
+This will create a folder `name-of-poject` with the content of `edgardleal/typescript-boilerplate` repository.
 
 ## Run tests
 
