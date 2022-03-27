@@ -73,6 +73,7 @@ const COMMANDS: { [key: string]: (args: string[]) => void } = {
       ...globule.find(`${target}/**/*.ts`),
       ...globule.find(`${target}/**/*.js`),
       ...globule.find(`${target}/**/*.json`),
+      ...globule.find(`${target}/**/*.yml`),
       ...globule.find(`${target}/**/*.template`),
     ];
 
@@ -93,8 +94,13 @@ const COMMANDS: { [key: string]: (args: string[]) => void } = {
     for (let i = 0; i < filepaths.length; i += 1) {
       const filePath = filepaths[i];
       const content = fs.readFileSync(filePath).toString();
-      const result = Mustache.render(content, context);
-      fs.writeFileSync(filePath, result);
+      try {
+        const result = Mustache.render(content, context);
+        fs.writeFileSync(filePath, result);
+      } catch (error) {
+        console.log(content); // eslint-disable-line
+        console.log('Error on file [%s]: %o', filePath, error.message); // eslint-disable-line
+      }
     }
 
     fs.unlinkSync(promptFilePath);
